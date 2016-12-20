@@ -1,10 +1,11 @@
 package gmail.yarnik75.module8.Passport;
+import java.util.Arrays;
 
 public class ForeignPassport extends Passport{
 
 	private String _dateOfReceivingFP;
 	private String _passportID_FP;
-	private Visa[] Visas = new Visa[2];
+	private Visa[] _visas = new Visa[2];
 	private int _visasCount = 0;
 	
 	
@@ -44,15 +45,27 @@ public class ForeignPassport extends Passport{
 		_passportID_FP = passportID_FP;
 	}
 	
-	public void addVisa() {
-		if (_visasCount < Visas.length) {
-			Visas[_visasCount++] = new Visa();
+	public void addVisa(String country,
+						String typeVisa,
+						String startDate,
+						String endDate,
+						int periodOfStay
+			) {
+		if (_visasCount < _visas.length) {
+			_visas[_visasCount++] = new Visa(country, typeVisa,
+											startDate, endDate, periodOfStay);
 					} else {
-			System.err.printf("У гражданина %s %s "
-						+ "нет места для записи визы%n", 
+			System.err.printf("Citizen %s %s "
+						+ "has no place for record Visa%n", 
 					getfirstName(), 
 					getlastName());
 			}
 		}
+	
+	public String getVisa() {
+		return Arrays.toString(_visas);
+		}
+
+	
 	
 }

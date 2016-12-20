@@ -10,11 +10,10 @@ public class Main {
 	vasyaF.setfirstName("VasyaF");
 	System.out.println(vasyaF.getfirstName());
 	System.out.println(vasyaF.getlastName());
-	vasyaF.addVisa();
-	vasyaF.addVisa();
-	//vasyaF.addVisa();
-	
-	
+	vasyaF.addVisa("USA", "A", "12-10-2017", "12-11-2017", 10);
+	//vasyaF.addVisa("USA", "A", "12-10-2017", "12-11-2017", 10);
+	vasyaF.addVisa("USA", "A", "12-10-2017", "12-11-2017", 10);
+	System.out.println(vasyaF.getVisa());
 	}
 
 }
