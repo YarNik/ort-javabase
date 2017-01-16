@@ -1,5 +1,6 @@
 package gmail.yarnik75.Points55;
 
+
 public class Array {
 	private Point[] arr;
 
