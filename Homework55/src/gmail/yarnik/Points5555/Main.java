@@ -10,7 +10,7 @@ public class Main {
 		Point p4 = new Point("D", 2, -7);
 		Point p5 = new Point("E", 0, 0);
 		Point [] points = {p1, p2, p3, p4, p5};
-		Array arr = new Array(points);
+		ArrayOfPoints arr = new ArrayOfPoints(points);
 		arr.sort();
 		arr.print();
 		
