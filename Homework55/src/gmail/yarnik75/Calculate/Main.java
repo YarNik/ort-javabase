@@ -1,5 +1,4 @@
 package gmail.yarnik75.Calculate;
-
 import gmail.yarnik75.Calculator.Services.SimpleCalculatorService;
 import gmail.yarnik75.Calculator.ui.ConsoleUserInterface;
 import gmail.yarnik75.Calculator.ui.UserInterface;

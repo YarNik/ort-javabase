@@ -20,39 +20,19 @@ public class Students {
         _patronymic = patronomic;
         _group = group;}
 
-	public String get_firstName() {
+	public String getFirstName() {
 		return _firstName;
 	}
 
-	public void set_firstName(String _firstName) {
-		this._firstName = _firstName;
-	}
-
-	public String get_lastName() {
+	public String getLastName() {
 		return _lastName;
 	}
 
-	public void set_lastName(String _lastName) {
-		this._lastName = _lastName;
-	}
-
-	public String get_patronymic() {
-		return _patronymic;
-	}
-
-	public void set_patronymic(String _patronymic) {
-		this._patronymic = _patronymic;
-	}
-
-	public String get_group() {
+	public String getGroup() {
 		return _group;
 	}
 
-	public void set_group(String _group) {
-		this._group = _group;
-	}
-
-	public void add_Mark(int Mark) {
+	public void addMark(int Mark) {
 		if (_marks.length < _markCountMax) {
 			int [] temp = new int[_marks.length + 1];
 			for (int i = 0; i < _marks.length; ++i){
@@ -63,8 +43,8 @@ public class Students {
 		} else {
 			System.err.printf("Student %s %s "
 					+ "has maximum amount of marks%n", 
-				get_firstName(), 
-				get_lastName());
+				getFirstName(), 
+				getLastName());
 		}
 	}
 	
@@ -96,6 +76,6 @@ public class Students {
 	
 	@Override
  	public String toString() {
- 		return "[ " + get_lastName() + " " + get_group() + " " + sumOfGrand() + "]";
+ 		return "[ " + getFirstName() + " "+ getLastName() + " " + getGroup() + " " + sumOfGrand() + "]";
  	}
 }

@@ -7,24 +7,24 @@ public class Main {
 
 	public static void main(String[] args) {
 		Students Vasya = new Students("Vasya", "Pupkin", "Hottabich", "MO-07");
-		Students V2 = new Students("Vasya", "Drypcin", "", "MO-07");
-		Students V3 = new Students("Vasya", "Zidkin", "", "MO-456");
-		Students V4 = new Students("Vasya", "Moskin", "", "MO-07");
-		Students V5 = new Students("Vasya", "Duzkin", "", "MO-07");
-		Students V6 = new Students("Vasya", "Fokin", "", "MO-456");
-		Students V7 = new Students("Vasya", "Trushkin", "", "MO-456");
+		Students V2 = new Students("Kolya", "Drypcin", "", "MO-07");
+		Students V3 = new Students("Petya", "Zidkin", "", "MO-456");
+		Students V4 = new Students("Sasha", "Moskin", "", "MO-07");
+		Students V5 = new Students("Pasha", "Duzkin", "", "MO-07");
+		Students V6 = new Students("Andrey", "Fokin", "", "MO-456");
+		Students V7 = new Students("Vitaly", "Trushkin", "", "MO-456");
 		
 //		System.out.println(Vasya.get_lastName());
-		Vasya.add_Mark(3);
-		Vasya.add_Mark(3);
-		Vasya.add_Mark(3);
-		Vasya.add_Mark(4);
-		V2.add_Mark(4); V2.add_Mark(5); V2.add_Mark(5); V2.add_Mark(4); V2.add_Mark(4);
-		V3.add_Mark(4); V3.add_Mark(4); V3.add_Mark(4); V3.add_Mark(4);
-		V4.add_Mark(5); V4.add_Mark(5); V4.add_Mark(5);
-		V5.add_Mark(3); V5.add_Mark(4); V5.add_Mark(3); V5.add_Mark(4);
-		V6.add_Mark(4); V6.add_Mark(4); V6.add_Mark(4); V6.add_Mark(4);
-		V7.add_Mark(5); V7.add_Mark(4); V7.add_Mark(5); V7.add_Mark(4);
+		Vasya.addMark(3);
+		Vasya.addMark(3);
+		Vasya.addMark(3);
+		Vasya.addMark(4);
+		V2.addMark(4); V2.addMark(5); V2.addMark(5); V2.addMark(4); V2.addMark(4);
+		V3.addMark(4); V3.addMark(4); V3.addMark(4); V3.addMark(4);
+		V4.addMark(5); V4.addMark(5); V4.addMark(5);
+		V5.addMark(3); V5.addMark(4); V5.addMark(3); V5.addMark(4);
+		V6.addMark(4); V6.addMark(4); V6.addMark(4); V6.addMark(4);
+		V7.addMark(5); V7.addMark(4); V7.addMark(5); V7.addMark(4);
 	//	Vasya.add_Mark(5);
 	//	Vasya.add_Mark(4);
 		System.out.println(Vasya.sumOfGrand());
@@ -44,8 +44,8 @@ public class Main {
 	class StudentComparator implements Comparator <Students> {
 		@Override
 	 	public int compare(Students s1, Students s2) {
-	 		int result = s1.get_group().compareTo(s2.get_group());
-	 		if (result == 0){result = s1.get_lastName().compareTo(s2.get_lastName());
+	 		int result = s1.getGroup().compareTo(s2.getGroup());
+	 		if (result == 0){result = s1.getLastName().compareTo(s2.getLastName());
 	 		}
 	 	return result;
 	 	}
