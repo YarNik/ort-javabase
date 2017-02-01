@@ -12,19 +12,24 @@ public class SimpleCalculatorService implements CalculatorService{
 	}
 	
 	@Override
-	public double evaluate(String expression) throws Exception{
-		expression = calcMultDivSequences(expression);
+	public String evaluate(String expression) throws Exception{
+		try {expression = calcMultDivSequences(expression);
 		double result = calcSequence(expression);
-		return result;
+		return String.valueOf(result);
+		} catch (NumberFormatException |
+				StringIndexOutOfBoundsException e) {
+			return "Invalid Query";
+		}
+	//	return result;
 	}
 
-	private double calcSequence(String expression) {
+	private double calcSequence (String expression) throws NumberFormatException {
 		int index = 0;
         double result = 1.0;
         char prevSign = '*';
         int prevSignIndex = -1;
         char currentChar;
-   //     try{
+        try{
         while( true ){
             currentChar = expression.charAt( index );
             if( currentChar == '+' || currentChar == '-' || currentChar == '*' || currentChar == '/'){
@@ -42,12 +47,17 @@ public class SimpleCalculatorService implements CalculatorService{
                 break;
             }
             index++;
+        }} catch (NumberFormatException e) {
+        	throw new NumberFormatException ();
+        } catch (StringIndexOutOfBoundsException e) {
+        	throw new StringIndexOutOfBoundsException ();
         }
+    //    		| StringIndexOutOfBoundsException e) {
+    //    	System.err.println("You entered wrong data");
+    //    	}
+        
 		return result;
-      //  } catch (NumberFormatException e){
-      //  	System.out.println("You entered wrong data");
-      //  } finally {return result;}
-	}
+		}
 
 	private double calc(double result, double number, char sign) {
 		 switch (sign){
@@ -82,7 +92,7 @@ public class SimpleCalculatorService implements CalculatorService{
             }
             index--;
         }
-        System.out.println(expression);
+     //   System.out.println(expression);
 		return expression;
 	}
 

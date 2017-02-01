@@ -15,10 +15,13 @@ public class ConsoleUserInterface implements UserInterface{
 	@Override
 	public void start() throws Exception {
 		Scanner s = new Scanner(System.in);
+		SaveToFile stf = new SaveToFile();
 		while (true){
 			System.out.println("Input expression");
 			String expr = s.nextLine();
 			System.out.println(expr + " = " +_SCS.evaluate(expr));
+		//	SaveToFile stf = new SaveToFile();
+			stf.saveToFile("Query: " + expr + " Result: " +_SCS.evaluate(expr));
 		}
 		
 	}
